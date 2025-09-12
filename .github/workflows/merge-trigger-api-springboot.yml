@@ -1,14 +1,10 @@
 name: Send Code Changes on Push
 
 on:
-  push:
-    branches:
-      - QAPI_seer_stg  # Replace with the branch you want to monitor
-    paths:
-      - 'QyrusEcommerceJavaBackend/**'
+
   pull_request:
     branches:
-      - QAPI_seer_stg  # Replace with the branch you want to monitor
+      - new-issue-branch  # Replace with the branch you want to monitor
     paths:
       - 'QyrusEcommerceJavaBackend/**'
     
@@ -67,7 +63,7 @@ jobs:
         env:
           API_URL: https://stg-gateway.qyrus.com:8243/seer-api-java-impact-analyzer-producer/v1/analyze-test-impact/
           REPO_NAME: ${{ github.repository }}
-          BRANCH_NAME: QAPI_seer_stg
+          BRANCH_NAME: new-issue-branch
           COMMIT_IDS: ${{ env.commits }}
           ENCODED_CHANGES: ${{ env.encoded_changes }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
