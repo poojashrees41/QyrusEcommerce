@@ -95,4 +95,4 @@ jobs:
           
           # Send the payload to the API
           curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer 90540897-748a-3ef2-b3a3-c6f8f42022da" \
-            -d "$PAYLOAD" https://stg-gateway.qyrus.com:8243/seer-api-java-impact-analyzer-producer/v1/analyze-test-impact/
+            -d "$PAYLOAD" https://stg-gateway.qyrus.com:8243/seer-api-java-impact-analyzer-producer/v1/analyze-test-impact
